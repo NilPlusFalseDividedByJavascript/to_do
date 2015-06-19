@@ -14,16 +14,32 @@
 //= require jquery_ujs
 
 //= require_tree .
-function makeSortable(){
-  $('#sortable').sortable({
-    placeholder: "ui-state-highlight"
-  });
-  $('#sortable').disableSelection();
-}
+// function makeSortable(){
+//   $('#sortable').sortable({
+//     placeholder: "ui-state-highlight"
+//   });
+//   $('#sortable').disableSelection();
+// }
 
 function changePosition(){
-  $('.ui-sortable-handle, .ui-state-default').on('mouseup', function(){
-    alert("ive been dropped!!");
+  $('#sortable').sortable().bind('sortupdate', function(e, ui) {
+    updated_postions = []
+    // set the updated positions
+    setPosition();
+
+    $('.ui-sortable-handle, .ui-state-default').each(function(i){
+        updated_postions.push({ id: $(this).data("id"), position: i + 1 });
+    });
+
+    // console.log(updated_postions);
+
+    $.ajax({
+        type: "PUT",
+        url: '/tasks/sort',
+        data: { order: updated_postions }
+    });
+
+
   });
 }
 
@@ -32,9 +48,13 @@ function setPosition(){
     $(this).attr('page_position', i + 1);
   });
 }
-//
-$(makeSortable);
+
+
+// $(document).ready(makeSortable);
+// $(document).ready(changePosition);
+// $(document).ready(setPosition);
+
+
+// $(makeSortable);
 $(changePosition);
 $(setPosition);
-// $(test);
-// $(alert("working"););
