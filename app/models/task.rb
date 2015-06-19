@@ -3,9 +3,12 @@ class Task < ActiveRecord::Base
 
   def self.find_next_position
     order = self.order(:position)
-    last_position = order.last.position
-    
-    return last_position + 1
+    last = order.last
 
+    if last && last.position
+      return last.position + 1
+    else
+      return 1
+    end
   end
 end

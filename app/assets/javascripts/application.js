@@ -27,13 +27,14 @@ function changePosition(){
   });
 }
 
-// function test(){
-//   $('li').on('click', function(){
-//     alert("ive been clicked!!");
-//   });
-// }
+function setPosition(){
+  $('.ui-sortable-handle, .ui-state-default').each(function(i){
+    $(this).attr('page_position', i + 1);
+  });
+}
 //
 $(makeSortable);
 $(changePosition);
+$(setPosition);
 // $(test);
 // $(alert("working"););
