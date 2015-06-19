@@ -6,49 +6,37 @@
  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
  #sortable li span { position: absolute; margin-left: -1.3em; }
+ .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
  </style>
- <script>
- // $(function() {
- //   $( "#sortable" ).sortable();
- //   $( "#sortable" ).disableSelection();
- // });
- </script>
 </head>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Tasks</h1>
+    <p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>Due date</th>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    Content
+    Due date
+    Position
 
-  <tbody>
-    <ul id='sortable'>
+    </p>
 
-
+    <ol id='sortable'>
     <% @tasks.each do |task| %>
     <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
-
-
-      <tr>
-        <td><%= task.content %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.position %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= task.content %>
+        <%= task.due_date %>
+        <%= task.position %>
+        <%= link_to 'Show', task %>
+        <%= link_to 'Edit', edit_task_path(task) %>
+        <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </br>
+        </br>
     </li>
+
     <% end %>
-    </ul>
-  </tbody>
-</table>
+  </ol>
+
 <!-- <ul id='sortable'>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>

@@ -14,7 +14,26 @@
 //= require jquery_ujs
 
 //= require_tree .
-$(function(){
-  $('#sortable').sortable();
+function makeSortable(){
+  $('#sortable').sortable({
+    placeholder: "ui-state-highlight"
+  });
   $('#sortable').disableSelection();
-});
+}
+
+function changePosition(){
+  $('.ui-sortable-handle, .ui-state-default').on('mouseup', function(){
+    alert("ive been dropped!!");
+  });
+}
+
+// function test(){
+//   $('li').on('click', function(){
+//     alert("ive been clicked!!");
+//   });
+// }
+//
+$(makeSortable);
+$(changePosition);
+// $(test);
+// $(alert("working"););
