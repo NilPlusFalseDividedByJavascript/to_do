@@ -25,6 +25,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
+    @task.position = Task.find_next_position
 
     respond_to do |format|
       if @task.save
