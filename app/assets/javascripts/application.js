@@ -14,3 +14,7 @@
 //= require jquery_ujs
 
 //= require_tree .
+$(function(){
+  $('#sortable').sortable();
+  $('#sortable').disableSelection();
+});
