@@ -29,7 +29,13 @@
   </thead>
 
   <tbody>
+    <ul id='sortable'>
+
+
     <% @tasks.each do |task| %>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+
+
       <tr>
         <td><%= task.content %></td>
         <td><%= task.due_date %></td>
@@ -38,10 +44,12 @@
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    </li>
     <% end %>
+    </ul>
   </tbody>
 </table>
-<ul id='sortable'>
+<!-- <ul id='sortable'>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
@@ -49,7 +57,7 @@
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-</ul>
+</ul> -->
 
 <br>
 
