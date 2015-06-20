@@ -7,6 +7,13 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def sort
+    params[:order].each do |key,value|
+      Task.find(value[:id]).update_attribute(:position,value[:position])
+    end
+    render :nothing => true
+  end
+
   # GET /tasks/1
   # GET /tasks/1.json
   def show

@@ -23,7 +23,7 @@
 
     <ol id='sortable'>
     <% @tasks.each do |task| %>
-    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <li class="ui-state-default" data-id= "<%= task.id %>"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
         <%= task.content %>
         <%= task.due_date %>
         <%= task.position %>
