@@ -4,7 +4,9 @@
 @import "neat";
 @import "base/base";
 
-
+body{
+  background-color: rgb(139, 46, 95)
+}
 h1{
   @include border-style(solid null solid);
   text-align: center;
@@ -12,11 +14,13 @@ h1{
 }
 
 .ui-state-default{
+  background-color: rgb(208, 139, 175);
   text-align: center;
   margin: 0 auto;
     width: 50%;
     @include border-style(solid solid solid solid);
     @include border-width(1em 3px null 100%);
+    @include border-color(rgb(104, 17, 63) blue blue blue);
     @include position(relative, 0 null null 1em);
     @include padding(10px 10px 10px 10px);
     // padding: 1.4em; padding-left: 1.5em;
