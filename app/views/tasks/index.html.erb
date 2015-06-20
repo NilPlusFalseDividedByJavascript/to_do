@@ -4,7 +4,7 @@
  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
  <style>
  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
- #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+ #sortable li { margin: 0 3px 3px 3px;  font-size: 1.4em; height: 8px; }
  #sortable li span { position: absolute; margin-left: -1.3em; }
  .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 
@@ -13,30 +13,25 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Tasks</h1>
-    <p>
 
-    Content
-    Due date
-    Position
-
-    </p>
 
     <ol id='sortable'>
     <% @tasks.each do |task| %>
-    <li class="ui-state-default" data-id= "<%= task.id %>"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <li class="ui-state-default" data-id= "<%= task.id %>">
         <%= task.content %>
         <%= task.due_date %>
         <%= task.position %>
-        
+
         <%= link_to 'Show', task %>
         <%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </br>
-        </br>
+
     </li>
 
     <% end %>
   </ol>
+  <h3>test</h3>
+  <h3>test</h3>
 
 <!-- <ul id='sortable'>
   <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
