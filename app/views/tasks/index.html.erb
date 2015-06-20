@@ -27,6 +27,7 @@
         <%= task.content %>
         <%= task.due_date %>
         <%= task.position %>
+        
         <%= link_to 'Show', task %>
         <%= link_to 'Edit', edit_task_path(task) %>
         <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
