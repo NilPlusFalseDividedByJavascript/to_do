@@ -5,32 +5,29 @@
 @import "base/base";
 
 body{
-  background-color: rgb(139, 46, 95)
+  @include background(radial-gradient(rgb(26, 148, 221),rgb(3, 84, 123)));
+
 }
 h1{
   @include border-style(solid null solid);
+  @include background(linear-gradient(rgb(255, 116, 79),rgb(195, 41, 0)));
   text-align: center;
   font-size: 5em;
+
 }
 
 .ui-state-default{
-  background-color: rgb(208, 139, 175);
+  background-color: rgb(136, 199, 230);
   text-align: center;
   margin: 0 auto;
     width: 50%;
     @include border-style(solid solid solid solid);
     @include border-width(1em 3px null 100%);
-    @include border-color(rgb(104, 17, 63) blue blue blue);
+    @include border-color(rgb(3, 84, 123));
     @include position(relative, 0 null null 1em);
     @include padding(10px 10px 10px 10px);
     // padding: 1.4em; padding-left: 1.5em;
 
 
 
-}
-
-
-
-h3{
-  @include padding(20vh null 10px 3em);
 }
