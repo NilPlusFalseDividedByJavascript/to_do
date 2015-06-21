@@ -27,7 +27,28 @@ h1{
     @include position(relative, 0 null null 1em);
     @include padding(10px 10px 10px 10px);
     // padding: 1.4em; padding-left: 1.5em;
+}
+
+#submit-button{
+   @include position(relative, 0 null null 37em);
+}
+
+#notice{
+  color:rgb(255, 116, 79);
+}
+
+#due-date{
+
+}
 
 
+.confirm{
+  text-align: center;
+  background-color: rgb(136, 199, 230);
+  @include border-color(rgb(3, 84, 123));
+  @include margin(250px 450px ); width:25%;
+  @include position(relative, 0 null null 0em);
+  @include border-style(solid);
+  @include padding(10px 10px 10px 10px);
 
 }

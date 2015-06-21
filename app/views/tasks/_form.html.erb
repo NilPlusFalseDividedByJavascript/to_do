@@ -11,14 +11,21 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
-  <div class="field">
-    <%= f.label :due_date %><br>
-    <%= f.datetime_select :due_date %>
+
+
+  <div id="due-date">
+    <div class="field">
+      <%= f.label :due_date %><br>
+      <%= f.datetime_select :due_date %>
+    </div>
   </div>
+
 
   <div class="actions">
     <%= f.submit %>
