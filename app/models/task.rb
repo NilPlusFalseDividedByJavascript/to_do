@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   validates :content, presence: true
 
+  
   def self.find_next_position
     order = self.order(:position)
     last = order.last
