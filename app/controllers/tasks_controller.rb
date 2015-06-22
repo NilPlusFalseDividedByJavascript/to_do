@@ -6,6 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all.order(:position)
+    @task = Task.new
   end
 
   def sort
