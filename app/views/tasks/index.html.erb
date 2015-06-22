@@ -12,7 +12,7 @@
 </head>
 <p id="notice"><%= notice %></p>
 
-<h1>Daily To-Do's</h1>
+<!-- <h1>Daily To-Do's</h1> -->
 
 
     <ol id='sortable'>
@@ -48,3 +48,7 @@
 <button id="submit-button"><%= link_to 'New Task', new_task_path %></button>
 
 <br>
+
+<%= link_to "Messages", root_path, data: { toggle: "modal", target: "#ajax-modal" } %>
+
+<%= render partial: 'refills/modal', locals:{task: @task} %>
